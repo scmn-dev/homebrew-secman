@@ -1,4 +1,4 @@
-class SMNode < Formula
+class SmNode < Formula
   desc "node.js dependency for secman"
   homepage "https://secman.dev/docs/cli"
   url "https://nodejs.org/download/release/v16.13.0/node-v16.13.0-darwin-x64.tar.gz"
