@@ -1,8 +1,8 @@
 class Secman < Formula
   desc "The Password Manager of your dreams"
   homepage "https://secman.dev/docs/cli"
-  url "https://cli-files.secman.dev/secman-v6.0.61/secman-v6.0.61.tar.gz"
-  sha256 "26f213ecb95d776dc91a8fdf59938ab876c898584e50e827416825c9320f7b70"
+  url "https://cli-files.secman.dev/secman-v6.0.7/secman-v6.0.7.tar.gz"
+  sha256 "afbc6976bd1affc9daf059ee04bef04c04c02aebf73c5bbc569f4f81e4f1cebe"
   depends_on "scmn-dev/secman/sm-node" => "16.13.0"
 
   def install
