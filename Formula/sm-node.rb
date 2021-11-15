@@ -1,9 +1,9 @@
 class SmNode < Formula
   desc "node.js dependency for secman"
   homepage "https://secman.dev/docs/cli"
-  url "https://nodejs.org/download/release/v16.13.0/node-v16.13.0.tar.gz"
+  url "https://nodejs.org/download/release/v16.13.0/node-v16.13.0-darwin-x64.tar.gz"
   version "16.13.0"
-  sha256 "9c00e5b6024cfcbc9105f9c58cf160762e78659a345d100c5bd80a7fb38c684f"
+  sha256 "37e09a8cf2352f340d1204c6154058d81362fef4ec488b0197b2ce36b3f0367a"
   keg_only "sm-node"
 
   def install
