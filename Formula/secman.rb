@@ -19,7 +19,7 @@ class Secman < Formula
 
   test do
     system bin/"secman", "init"
-    system bin/"secman", "data"
+    system bin/"secman", "crypto", "HOMEBREW"
     assert_match "secman version #{version}", shell_output("#{bin}/secman --version")
   end
 end
