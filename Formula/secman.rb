@@ -6,11 +6,11 @@ class Secman < Formula
   depends_on "scmn-dev/secman/sm-node" => "16.13.0"
 
   def install
-    inreplace "bin/secman", /^CLIENT_HOME=/, "ENV SECMAN_OCLIF_CLIENT_HOME=#{lib/"client"}\nCLIENT_HOME="
+    inreplace "bin/secman", /^CLIENT_HOME=/, "export SECMAN_OCLIF_CLIENT_HOME=#{lib/"client"}\nCLIENT_HOME="
     inreplace "bin/secman", "\"$DIR/node\"", Formula["sm-node"].opt_bin/"node"
     libexec.install Dir["*"]
     bin.install_symlink libexec/"bin/secman"
-    system("ENV SM_PROVIDER=brew")
+    system("export SM_PROVIDER=brew")
   end
 
   test do
