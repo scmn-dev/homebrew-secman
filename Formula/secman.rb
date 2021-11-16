@@ -6,21 +6,20 @@ class Secman < Formula
   license "MIT"
 
   livecheck do
-    url :homepage
-    regex(/href=.*?aamath[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://github.com/scmn-dev/secman/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
   end
-
-  depends_on "scmn-dev/secman/sm-node"
 
   def install
     inreplace "bin/secman", /^CLIENT_HOME=/, "export SECMAN_OCLIF_CLIENT_HOME=#{lib/"client"}\nCLIENT_HOME="
-    inreplace "bin/secman", "\"$DIR/node\"", Formula["sm-node"].opt_bin/"node"
     libexec.install Dir["*"]
     bin.install_symlink libexec/"bin/secman"
     ENV["SM_PROVIDER"] = "brew"
   end
 
   test do
-    system bin/"secman", "-v"
+    system bin/"secman", "init"
+    system bin/"secman", "data"
+    assert_match "secman version #{version}", shell_output("#{bin}/secman --version")
   end
 end
