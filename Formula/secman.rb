@@ -14,6 +14,8 @@ class Secman < Formula
     inreplace "bin/secman", /^CLIENT_HOME=/, "export SECMAN_OCLIF_CLIENT_HOME=#{lib/"client"}\nCLIENT_HOME="
     libexec.install Dir["*"]
     bin.install_symlink libexec/"bin/secman"
+
+    # this variable is used for `update` command
     system.ENV["SM_PROVIDER"] = "brew"
   end
 
