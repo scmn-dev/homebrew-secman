@@ -16,12 +16,14 @@ class Secman < Formula
     bin.install_symlink libexec/"bin/secman"
 
     # this variable is used for `update` command
-    system.ENV["SM_PROVIDER"] = "brew"
+    # https://github.com/scmn-dev/secman/blob/main/src/commands/update.ts#L48
+    ENV["SM_PROVIDER"] = "brew"
   end
 
   test do
     system bin/"secman", "init"
     system bin/"secman", "crypto", "HOMEBREW"
-    assert_match "✔ already on latest version: v#{version}", shell_output("#{bin}/secman update")
+    assert_match "secman 6.0.71 (2021-11-13)\nhttps://github.com/scmn-dev/secman/releases/tag/__VERSION__",
+    shell_output("#{bin}/secman --version")
   end
 end
