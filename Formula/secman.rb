@@ -17,7 +17,6 @@ class Secman < Formula
     inreplace "bin/secman", "\"$DIR/node\"", Formula["sm-node"].opt_bin/"node"
     libexec.install Dir["*"]
     bin.install_symlink libexec/"bin/secman"
-    # system("env SM_PROVIDER=brew")
     ENV["SM_PROVIDER"] = "brew"
   end
 
