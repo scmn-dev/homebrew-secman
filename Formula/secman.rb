@@ -1,5 +1,5 @@
 class Secman < Formula
-  desc "The Password Manager of your dreams"
+  desc "👊 Human-friendly and amazing secrets manager."
   homepage "https://secman.dev/docs/cli"
   url "https://cli-files.secman.dev/secman-v6.0.71/secman-v6.0.71.tar.gz"
   sha256 "2a9c03df9b444e9c110b640c2e22ef4db147623cb728f7b2c68f2bc488d0e230"
