@@ -20,6 +20,6 @@ class Secman < Formula
   test do
     system bin/"secman", "init"
     system bin/"secman", "crypto", "HOMEBREW"
-    assert_match "secman v#{version} (2021-11-13)\nhttps://github.com/scmn-dev/secman/releases/tag/v#{version}\n", shell_output("#{bin}/secman --version")
+    assert_match "✔ already on latest version: v#{version}", shell_output("#{bin}/secman update")
   end
 end
