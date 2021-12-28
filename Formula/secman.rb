@@ -1,8 +1,8 @@
 class Secman < Formula
   desc "👊 Human-friendly and amazing secrets manager"
   homepage "https://secman.dev/docs/cli"
-  url "https://cli-files.secman.dev/secman-v6.1.0/secman-v6.1.0.tar.gz"
-  sha256 "bfb09e706a3d3080865ad244d018e381582090bdd25ed7a11c79960788b9a614"
+  url "https://cli-files.secman.dev/secman-v6.1.1/secman-v6.1.1.tar.gz"
+  sha256 "b68d07111c21c520c3bfd7b1971fbccb5ef127a052ae40883c75ff70d86d9081"
   license "MIT"
 
   livecheck do
