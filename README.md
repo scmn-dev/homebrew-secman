@@ -2,8 +2,7 @@ Secman Homebrew Tap
 -------------------
 
 ```sh
-brew tap scmn-dev/secman
-brew install secman
+brew install scmn-dev/tap/secman
 ```
 
 For more information, visit **https://secman.dev/docs/cli**
