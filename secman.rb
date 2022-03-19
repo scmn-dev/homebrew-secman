@@ -55,7 +55,6 @@ class Secman < Formula
   end
 
   def post_install
-    system "npm", "install", "--global", "@secman/scc"
-
+    system "sudo", "npm", "install", "--global", "@secman/scc"
   end
 end
