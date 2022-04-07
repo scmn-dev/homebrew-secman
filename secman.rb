@@ -11,7 +11,7 @@ class Secman < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/scmn-dev/secman/releases/download/v6.2.3/secman_macos_v6.2.3_arm64.zip"
-      sha256 "a7771462fc0bbfb391ea1ac8b00954262aa34ba395cf6c74819d4c3d7dd92b03"
+      sha256 "cb5c7c99b68656c07f7992d9401372d08e2555fd7f87c7d64bf55fe60e1fcba3"
 
       def install
         bin.install "bin/secman"
@@ -19,7 +19,7 @@ class Secman < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/scmn-dev/secman/releases/download/v6.2.3/secman_macos_v6.2.3_amd64.zip"
-      sha256 "8d38176ab01da94cac3accdf33c41b3fd314f1f172dc24e3b790d207e8f51934"
+      sha256 "cd7e2b30aaad0540808909441c20a59212f317003875b8acef7c72016f5d8c10"
 
       def install
         bin.install "bin/secman"
@@ -28,9 +28,17 @@ class Secman < Formula
   end
 
   on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/scmn-dev/secman/releases/download/v6.2.3/secman_linux_v6.2.3_amd64.zip"
+      sha256 "423e3c0a2127426a40d243a9112b8542990e8d92ce53ce868f6c6e43882e5791"
+
+      def install
+        bin.install "bin/secman"
+      end
+    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/scmn-dev/secman/releases/download/v6.2.3/secman_linux_v6.2.3_arm.zip"
-      sha256 "abfd666969f4ebc28e4c5d2f96fc3acd595b09ca32c9ad6612a4fc58cf578c5f"
+      sha256 "cc08f072e03c80abeec16fb1a73c7ad214319bd72802fdb9b02be3570887dcd9"
 
       def install
         bin.install "bin/secman"
@@ -38,15 +46,7 @@ class Secman < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/scmn-dev/secman/releases/download/v6.2.3/secman_linux_v6.2.3_arm64.zip"
-      sha256 "158f5c07b9cfcc89ca520ce7ffe5aef992805fc4686b6e85b552751b72e74c3a"
-
-      def install
-        bin.install "bin/secman"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/scmn-dev/secman/releases/download/v6.2.3/secman_linux_v6.2.3_amd64.zip"
-      sha256 "cc5f3869a5376745c523afbd09cf9053cea57e650edd32bdecacd1139d8bd0b1"
+      sha256 "40539d64b64a85dbe01d86d57a1927d26b29a3dcccbb71fd635141e9302a3f55"
 
       def install
         bin.install "bin/secman"
