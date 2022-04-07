@@ -5,21 +5,21 @@
 class Secman < Formula
   desc "👊 Human-friendly and amazing TUI secrets manager"
   homepage "https://secman.dev"
-  version "6.2.2"
+  version "6.2.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/scmn-dev/secman/releases/download/v6.2.2/secman_macos_v6.2.2_amd64.zip"
-      sha256 "af2dfb5e24981d0c7d82bc7c3b08a696df8b48226629f0056da929c4a6d161be"
+      url "https://github.com/scmn-dev/secman/releases/download/v6.2.3/secman_macos_v6.2.3_amd64.zip"
+      sha256 "107e0e864aa0efe5edca75c9dd0b3ae01a6528e266330c47fea687167a5fcf94"
 
       def install
         bin.install "bin/secman"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/scmn-dev/secman/releases/download/v6.2.2/secman_macos_v6.2.2_arm64.zip"
-      sha256 "151308e537d551cfd0e5fda18ab94e4acf264a1f26962586f1973879930c6262"
+      url "https://github.com/scmn-dev/secman/releases/download/v6.2.3/secman_macos_v6.2.3_arm64.zip"
+      sha256 "8b3e3e0cab57d554d791da77681d14afc3e8fe87f1d3903e16a6d31c264b44f8"
 
       def install
         bin.install "bin/secman"
@@ -28,25 +28,25 @@ class Secman < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/scmn-dev/secman/releases/download/v6.2.2/secman_linux_v6.2.2_amd64.zip"
-      sha256 "a1ee47a8044821d8a3fa33c065756e1bcb609a9e7b85158b7b0ded6d3b63c526"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/scmn-dev/secman/releases/download/v6.2.3/secman_linux_v6.2.3_arm64.zip"
+      sha256 "21993318b2eb814cb5dd4b0570379e55ab4b185edb7e2c25fcb43a8f512ab8ca"
 
       def install
         bin.install "bin/secman"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/scmn-dev/secman/releases/download/v6.2.2/secman_linux_v6.2.2_arm.zip"
-      sha256 "e230f7cb0f7654c45d9f96447799bf6a5f3f1160ba23448db08c90625cfd810c"
+      url "https://github.com/scmn-dev/secman/releases/download/v6.2.3/secman_linux_v6.2.3_arm.zip"
+      sha256 "c0ea63ad5933887a41f58f3265f6a53a8370e717818169bd89454f263bb2bfe1"
 
       def install
         bin.install "bin/secman"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/scmn-dev/secman/releases/download/v6.2.2/secman_linux_v6.2.2_arm64.zip"
-      sha256 "10aa260e73e1ff219488dc32ac0786582eaa49fe3abebba9b41102b2215c6964"
+    if Hardware::CPU.intel?
+      url "https://github.com/scmn-dev/secman/releases/download/v6.2.3/secman_linux_v6.2.3_amd64.zip"
+      sha256 "e35b52ee751435f88079c7031ee6023ac3aaa8934631d6a662ce7b0b0c515384"
 
       def install
         bin.install "bin/secman"
